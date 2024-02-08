@@ -17,6 +17,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "sudo chown -R vscode /flutter/.pub-cache/"
+	//"postStartCommand": "flutter pub upgrade"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
