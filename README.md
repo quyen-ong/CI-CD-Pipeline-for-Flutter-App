@@ -13,5 +13,5 @@ To run the app:
   1. cd into the folder containing the app
   2. run 'flutter run -d web-server'
 
-troubleshoot:
+Troubleshoot:
 - if there are permission errors run 'flutter pub upgrade'
