@@ -15,15 +15,15 @@ jobs:
           channel: 'stable'
 
       - name: install app dependencies
-        working-directory: ./app
+        working-directory: ./myapp
         run: flutter pub get
 
       - name: Run tests
-        working-directory: ./app
+        working-directory: ./myapp
         run: flutter test
 
       - name: Build flutter web
-        working-directory: ./app
+        working-directory: ./myapp
         run: flutter build web
 
       
@@ -31,5 +31,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/web/
+          publish_dir: ./myapp/build/web/
         
