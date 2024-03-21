@@ -5,8 +5,12 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  Pipeline:
+    name: Flutter CI/CD Pipeline
     runs-on: ubuntu-latest
+    defaults: 
+      run:
+        working-directory: ./app
 
     steps:
       - uses: actions/checkout@v4
@@ -15,19 +19,16 @@ jobs:
           channel: 'stable'
 
       - name: install app dependencies
-        working-directory: ./app
         run: flutter pub get
 
       - name: Run tests
-        working-directory: ./app
         run: flutter test
 
       - name: Build flutter web
-        working-directory: ./app
         run: flutter build web
 
       
-      - name: Deploy
+      - name: Web Deploy - GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
